@@ -62,6 +62,10 @@ describe('abc: xlsx', () => {
         srv = injector.get(XlsxService);
     }
 
+    beforeEach(() => {
+        isErrorRequest = false;
+    });
+
     describe('[#import]', () => {
         it('should be load xlsx via url', (done: () => void) => {
             genModule();
