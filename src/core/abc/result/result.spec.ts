@@ -1,8 +1,6 @@
-import { Component, DebugElement, CUSTOM_ELEMENTS_SCHEMA, TemplateRef, ViewChild } from '@angular/core';
+import { Component, DebugElement, TemplateRef, ViewChild } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
-import { APP_BASE_HREF } from '@angular/common';
 
 import { AdResultModule } from './result.module';
 import { ResultComponent } from './result.component';
@@ -14,12 +12,8 @@ describe('abc: result', () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            imports: [ RouterModule.forRoot([]), AdResultModule.forRoot() ],
-            schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-            declarations: [ TestComponent ],
-            providers: [
-                { provide: APP_BASE_HREF, useValue: '/' }
-            ]
+            imports: [ AdResultModule.forRoot() ],
+            declarations: [ TestComponent ]
         });
         fixture = TestBed.createComponent(TestComponent);
         dl = fixture.debugElement;
